@@ -1,0 +1,81 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: black;
+  color: white;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.canvas-container {
+  flex: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-container {
+  flex: 3;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slider-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  justify-content:center;
+  text-align: center;
+  width: 100%;
+}
+
+.slider-group label {
+  width: 20%;
+}
+
+.slider-group.inactive {
+  opacity: 0.5;
+}
+
+.slider-group input {
+  width: 65%;
+}
+
+.slider-group span {
+  width: 15%;
+  text-align: center;
+}
+
+.slider-group input[type="range"]:disabled {
+  opacity: 0.5;
+}
+
+.slider-group #scale-intervals {
+  width: 50%;
+  text-align: center;
+}
+
+.slider-group input[type="text"]:disabled {
+  color: #222222;
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .container {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .slider-container {
+    width: 100%
+  }
+}

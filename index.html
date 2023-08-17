@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="FibCycles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="soundsynthesis.js"></script>
+    <script src="Scale.js"> </script>
+    <script src="FibCycles.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- <div style="flex: 1;"></div> -->
+      <div class="canvas-container" id="canvas-container">
+        <!-- p5.js will inject canvas here -->
+      </div>
+      <div class="slider-container">
+        <div>
+          <h3>Settings</h3>
+        </div>
+        <div class="slider-group">
+          <label for="n-slider">Modulo:</label>
+          <input type="range" id="n-slider" min="2" max="100" value="7">
+          <span id="n-value">7</span>
+        </div>
+        <div class="slider-group">
+          <label for="speed-slider">Tempo:</label>
+          <input type="range" id="speed-slider" min="-2" max="5" value="1" step="0.01">
+          <span id="speed-value">120</span>
+        </div>
+        <div class="slider-group">
+          <label for="decay-slider">Decay:</label>
+          <input type="range" id="decay-slider" min="0.1" max="1" value="0.9" step="0.01">
+          <span id="decay-value">0.9</span>
+        </div>
+        <div class="slider-group">
+          <button id="end-all" onclick="endAllNotes()">End all</button>
+        </div>
+        <div class="slider-group switchable active" id="num-cycles-slider-group">
+          <label for="num-cycles-slider">Num Cycles:</label>
+          <input type="range" id="num-cycles-slider" min="1" max="20" value="1">
+          <span id="num-cycles-value">1</span>
+        </div>
+        <div class="slider-group switchable inactive" id="num-notes-slider-group">
+          <label for="num-notes-slider">Num Notes:</label>
+          <input type="range" id="num-notes-slider" min="1" max="100" value="50">
+          <span id="num-notes-value">50</span>
+        </div>
+        <div class="slider-group switchable inactive" id="decay-threshold-slider-group">
+          <label for="decay-threhold-slider">Decay Threshold:</label>
+          <input type="range" id="decay-threhold-slider" min="0" max="1" step="0.01" value="0.8">
+          <span id="decay-threhold-value">0.8</span>
+        </div>
+        <div class="slider-group">
+          <label for="scale-selector">Scale:</label>
+          <select id="scale-selector">
+              <option value="chromatic">Chromatic</option>
+              <option value="major">Major</option>
+              <option value="minor">Minor</option>
+              <option value="pentatonic">Pentatonic</option>
+              <option value="octatonic">Octatonic</option>
+              <option value="harmonic series">Harmonic Series</option>
+              <option value="custom">Custom</option>
+          </select>
+        </div>
+        <div class="slider-group">
+            <label for="scale-intervals">Intervals:</label>
+            <input type="text" id="scale-intervals" value="" disabled>
+        </div>
+        <div class="slider-group">
+          <label for="median-pitch-slider">Median Pitch:</label>
+          <input type="range" id="median-pitch-slider" min="30" max="100" value="62" step="1">
+          <span id="median-pitch-value">62</span>
+        </div>
+
+      </div>
+      <!-- <div style="flex: 1;"></div> -->
+    </div>
+  </body>
+</html>
